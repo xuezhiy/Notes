@@ -1,0 +1,15 @@
+Micro-services DevOps
+  Vargrant - configure init dev env
+  Ansible - configuration management
+  Consul - service discovery
+  Docker - service running environment
+  Jenkins
+  Nginx - Proxy server and loading balance
+  Blue/Green deployment
+  Self healing
+  ELK 
+  KONG - API gateway
+  
+Docker network
+
+  
