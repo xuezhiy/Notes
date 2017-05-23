@@ -79,15 +79,14 @@
       # docker pull gcr.io/google_containers/kube-apiserver-amd64:v1.6.0    // should be work.
 
 
-2.
-Install tsocks on Ubuntu and set server/port
-# apt-get install tsocks
-# vi /etc/tsocks.conf
+2.Install tsocks on Ubuntu and set server/port
 
-// add server and port to the config
-// Use proxy to execute
-# sudo tscoks apt-get update
+    # apt-get install tsocks
+    # vi /etc/tsocks.conf
 
+    // add server and port to the config
+    // Use proxy to execute
+    # sudo tscoks apt-get update
 
 Install tsocks on Mac
 
