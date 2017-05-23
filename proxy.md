@@ -1,9 +1,14 @@
 1. Use socks5 as http proxy
+
   a. Install shadowsocks on remote server(ip is IP_REMOTE)
+  
      # apt-get install -y python-pip
      # pip install shadowsocks
+     
   b. Start shadowsocks on remote server
+  
      Add /etc/shadowsocks.json file
+     
      {
         "port_password":
         {
@@ -19,11 +24,14 @@
      # sudo ssserver -c /etc/shadowsocks.json -d start
 
   c. Install shadowsocks on local server
+  
      # apt-get install -y python-pip
      # pip install shadowsocks
      
   d. Start shadowsocks on local server
+  
      Add /etc/shadowsocks.json file
+     
      {
         "server":"IP_REMOTE",
         "server_port":8388,
@@ -36,10 +44,12 @@
      # sslocal -c /etc/shadowsocks.json -d start
   
   e. Now the local server can connect to remote server by socks5 proxy
+  
      # export http_proxy=socks5://127.0.0.1:1080
      # curl www.google.com          
      
   f. For unsupport socks5 proxy, we can use privoxy
+  
      # apt-get install -y privoxy
      
      Add below content to /etc/privoxy/config
@@ -55,7 +65,9 @@
      Now we can use both http_proxy=http://127.0.0.1:8118 and socks5://127.0.0.1:1080
 
    g. Use the http proxy in docker
+   
       Add or edit file /etc/systemd/system/docker.service.d/http_proxy.conf
+      
       [Service]
         Environment=HTTP_PROXY=http://127.0.0.1:8118/
         Environment=HTTPS_PROXY=http://127.0.0.1:8118/
